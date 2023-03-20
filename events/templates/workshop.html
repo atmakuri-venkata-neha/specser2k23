@@ -70,6 +70,10 @@
         <div class="section">
           <!-- Below Lies About The Event -->
           <div class="EventInformation">
+            <form action="register" method="post">
+              {% csrf_exempt %}
+            <input type="number" hidden name="event" value="{{event.id}}">
+                      <input type="number" hidden name="amount" value="{{event.event_fee}}">
               <div class="EventPoster"><img src="{{event.event_poster.url}}" class="EventImage" alt="EventPoster"></div>
               <div class="EventInfo">
                   <h1 class="display-4">{{event.event_name}}</h1>
@@ -117,10 +121,10 @@
                     Registrations Open Soon!!!!
                   </div>
               </div>
-              <!-- <div class="Register d-grid gap-2 d-md-flex justify-content-md-end">
+              <div class="Register d-grid gap-2 d-md-flex justify-content-md-end">
                   <button type="button" class="btn btn-outline-light me-md-2" style="width: 200px;">Register</button>
-              </div> -->
-              
+              </div>
+              </form>
           </div>
                     <!-- <input type="number" hidden name="event" value="{{event.id}}">
                     <input type="number" hidden name="amount" value="{{event.event_fee}}"> -->

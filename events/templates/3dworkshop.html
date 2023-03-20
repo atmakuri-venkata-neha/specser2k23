@@ -70,8 +70,11 @@
             <div class="section">
                 <!-- Below Lies About The Event -->
                 <div class="EventInformation">
-                  <form action="intiatepayment" method="post">
+                  <form action="register" method="post">
                     {% csrf_token %}
+                    <form action="register" method="post">
+                      <input type="number" hidden name="event" value="{{event.id}}">
+                                <input type="number" hidden name="amount" value="{{event.event_fee}}">
                     <div class="EventPoster"><img src="{{event.event_poster.url}}" class="EventImage" alt="EventPoster"></div>
                     <div class="EventInfo">
                         <h1 class="display-4">{{event.event_name}}</h1>
@@ -82,13 +85,16 @@
                             
                             <p class="display-6">Fee : {{event.event_fee}}</p>
                         </div>
-                        <div class="alert alert-primary" role="alert">
+                        <!-- <div class="alert alert-primary" role="alert">
                           Registrations Open Soon!!!!
-                        </div>
+                        </div> -->
                         <div class="alert alert-danger" role="alert">
                           Only Limited Registrations are accepted!!!
                         </div>
                     </div>
+                    <div class="Register d-grid gap-2 d-md-flex justify-content-md-end">
+                      <button type="submit" class="btn btn-dark me-md-2" style="width: 200px;">Register</button>
+                  </div>
                     <!-- <input type="number" hidden name="event" value="{{event.id}}">
                     <input type="number" hidden name="amount" value="{{event.event_fee}}">
                     {% if request.user.flag is 1 %}
