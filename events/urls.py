@@ -18,6 +18,7 @@ urlpatterns = [
     path("events/makepayment",views.makepayment,name='makepayment'),
     path("callback/",views.handlerequest,name='callback'),
     path("events/intiatepayment",views.intiatepayment,name='intiatepayment'),
+    path("events/register",views.register,name='register'),
     path("sponsors",views.sponsors,name="sponsors"),
     path('workshop',views.workshop,name='ar_vr_workshop'),
     path('3dworkshop',views.mworkshop,name='3d_workshop')

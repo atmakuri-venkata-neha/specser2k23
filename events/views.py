@@ -172,3 +172,21 @@ def workshop(request):
 def mworkshop(request):
     workshop = Events.objects.get(id=18)
     return render(request,'3dworkshop.html',{'event':workshop})
+
+
+def register(request):
+    user = request.user
+    if user.is_authenticated:
+        if request.method=='POST':
+            event_id = request.POST.get('event')
+            event = Events.objects.get(id=event_id)
+            amount = int(request.POST.get('amount'))
+            regestration = Registrations.objects.create(user = user.id,
+                                                    event=event_id,
+                                                    amount=amount) 
+            regestration.save()
+            msg = 'you are resistered for'
+            return render(request,'index.html',{'msg':msg,'id' :event.event_name})
+    else:
+        error = 'Please login before registering'
+        return render(request,'index.html',{'error':error})
