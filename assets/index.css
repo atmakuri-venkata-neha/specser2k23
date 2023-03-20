@@ -1,0 +1,223 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url('5040007.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.navBar{
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    padding: 0.5% 2% 0.5% 2%;
+    background-color: rgba(255, 255, 255,0.15);  
+    backdrop-filter: blur(10px);
+    z-index: 5555;
+}
+.section{
+    position: relative;
+    top: 76px;
+}
+.SpeCSErInfo{
+    padding: 3% 2% 3% 2%;
+    margin: 3% 6.5% 0% 6.5%;
+    border-radius: 20px;
+    word-wrap: break-word;
+    color: white;
+    background-color: rgba(255, 255, 255,0.15);
+    backdrop-filter: blur(10px);
+}
+.Sponsors{
+    background-color: rgba(255, 255, 255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3% 2% 3% 2%;
+    margin: 3% 6.5% 0% 6.5%;
+}
+.MainSponsors{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-self: center;
+    background-color: transparent;
+    border-radius: 20px;
+    margin: 3% 6.5% 0% 6.5%;
+}
+.DlpTres{
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 5%;
+}
+.DlpTres img{
+    height: 140px;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.AceAcademy{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 140px;
+    width: fit-content;
+    margin-bottom: 5%;
+}
+.AceAcademy img{
+    height: 140px;
+    margin-bottom: 5%;
+}
+.VijElectro{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 140px;
+    margin-bottom: 5%;
+}
+.VijElectro img{
+    height: 140px;
+    width: 140px;
+    margin-bottom: 5%;
+}
+.Hospital{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 100px;
+    width: auto;
+    margin-bottom: 5%;
+}
+.Hospital img{
+    height: 100px;
+    width: auto;
+    margin-bottom: 5%;
+}
+.Prahan{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: auto;
+    height: 100px;
+    margin-bottom: 5%;
+}
+.Prahan img{
+    width: auto;
+    height: 100px;
+    margin-bottom: 5%;
+}
+.HackerEarth{
+    width: 160px;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 5%;
+}
+.HackerEarth img{
+    height: 50px;
+    width:160px;
+    margin-bottom: 5%;
+}
+@media (min-width:991px){
+    img{
+        vertical-align: middle;
+        height: 500px;
+        width: 100%;
+    }
+    .SlideShow{
+        padding: 50px 100px 0 100px;
+        border-radius: 20px;
+    }
+    .image{
+        border-radius: 20px;
+    }
+}
+@media(max-width: 991px){
+    .SlideShow{
+        padding: 50px 55px 0px 55px;
+        border-radius: 20px;
+    }
+    .image{
+        border-radius: 20px;
+    }
+}
+@media (max-width:575px){
+    img{
+        vertical-align:middle;
+        height: auto;
+        width:100%;
+        padding: 0;
+    }
+    .image{
+        border-radius:0px;
+    }
+    .section{
+        top:71px;
+    }
+    .SpeCSErInfo{
+        margin-top: 8%;
+    }
+    .SlideShow{
+        padding: 0;
+        border-radius: 0px;
+    }
+    .DlpTres{
+        width: 120px;
+        height: auto;
+    }
+    .DlpTres img{
+        width: 120px;
+        height: auto;
+    }
+    .AceAcademy{
+        height: 50px;
+        width: auto;
+    }
+    .AceAcademy img{
+        height: 50px;
+        width: auto;
+    }
+    .VijElectro{
+        height: 50px;
+        width: 50px;
+    }
+    .VijElectro img{
+        height: 50px;
+        width: 50px;
+    }
+    .Hospital{
+        height: 40px;
+        width: auto;
+    }
+    .Hospital img{
+        height: 40px;
+        width: auto;
+    }
+    .Prahan{
+        width: 120px;
+        height: auto;
+    }
+    .Prahan img{
+        width: 120px;
+        height: auto;
+    }
+    .HackerEarth{
+        height: auto;
+        width: 100px;
+    }
+    .HackerEarth img{
+        height: auto;
+        width: 100px;
+    }
+    .SpeCSErInfo div{
+        font-size: 1rem !important;
+    }
+}

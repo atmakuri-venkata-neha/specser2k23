@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url('5040007.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.navBar{
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    padding: 0.5% 2% 0.5% 2%;
+    background-color: rgba(255, 255, 255,0.15);  
+    backdrop-filter: blur(10px);
+    z-index: 5555;
+}
+.section{
+    position: relative;
+    top: 72px;
+}
+.EventsRegistered{
+    padding: 4% 15% 0% 15%;
+}
+.ProfileTitle{
+    margin-bottom: 30px;
+}
+
+.Information{
+    margin: 5% 0% 5% 0%;
+}
+.Details{
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: rgba(255, 255, 255,0.15);  
+    backdrop-filter: blur(10px);
+}
+.Profile{
+    padding: 4% 15% 0% 15%;
+}
+.TableBorder{
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 3% 5% 3% 5%;
+    background-color: rgba(255, 255, 255,0.15);  
+    backdrop-filter: blur(10px);
+}
+.Register{
+    display: flex;
+    justify-content: end;
+}
+@media(max-width : 575px){
+    .Details{
+        padding: 3% 5% 3% 5% ;
+        width: 100%;
+    }
+    .Profile{
+        padding:8%;
+    }
+    .Register{
+        justify-content: center;
+        margin-top: 5%;
+        width: 100%;
+    }
+    .EventsRegistered{
+        padding: 8%;
+    }
+}

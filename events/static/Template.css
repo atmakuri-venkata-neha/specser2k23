@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+.navBar{
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    padding: 0.5% 2% 0.5% 2%;
+    background-color: #F8F9FA;
+    z-index: 5555;
+}
+.section{
+    position: relative;
+    top: 72px;
+}
+.SpeCSErInfo{
+    padding: 3% 6% 3% 7%;
+    word-wrap: break-word;
+}
+@media (min-width:768px){
+    img{
+        vertical-align: middle;
+        height: 500px;
+        width: 100%;
+    }
+    .image{
+        border-radius: 20px;
+    }
+}
+@media (max-width:768px){
+    img{
+        vertical-align:middle;
+        height: auto;
+        width:100%;
+        padding: 0;
+    }
+    .image{
+        border-radius:none;
+    }
+    .section{
+        top:61px;
+    }
+}

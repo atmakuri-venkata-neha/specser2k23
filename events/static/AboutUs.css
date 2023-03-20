@@ -1,0 +1,177 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url('5040007.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+hr{
+    color:white !important;
+}
+.navBar{
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    padding: 0.5% 2% 0.5% 2%;
+    background-color: rgba(255, 255, 255,0.15);  
+    backdrop-filter: blur(10px);
+    z-index: 5555;
+}
+.section{
+    position: relative;
+    top: 72px;
+}
+.About{
+    padding: 4% 4% 4% 4%;
+}
+.FlexBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.HODDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 1% 1% 1% 1%;
+    margin: 1% 1% 1% 1%;
+    width: 450px;
+    background-color: rgba(255, 255, 255,0.15);  
+    backdrop-filter: blur(10px);
+}
+.PrincyDiv{
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 1% 1% 1% 1%;
+    margin: 1% 1% 1% 1%;
+    background-color: rgba(255, 255, 255,0.15);  
+    backdrop-filter: blur(10px);
+}
+.RakeshDiv{
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 1% 1% 1% 1%;
+    margin: 1% 1% 1% 1%;
+    background-color: rgba(255, 255, 255,0.15);  
+    backdrop-filter: blur(10px);
+}
+.Identity{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 270px;
+    border-radius: 20px;
+    padding: 1% 1% 1% 1%;
+    margin: 1% 1% 1% 1%;
+    background-color: rgba(255, 255, 255,0.15);  
+    backdrop-filter: blur(10px);
+}
+.EventDetails{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+.Coordinators{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    padding: 1% 1% 1% 1%;
+    margin: 1% 1% 1% 1%;
+}
+.Coordinator1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 250px;
+    padding: 1% 1% 1% 1%;
+}
+.Coordinator2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 250px;
+    padding: 1% 1% 1% 1%;
+}
+.Coordinator3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 250px;
+    padding: 1% 1% 1% 1%;
+}
+img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.Wrapper{
+    border-radius: 20px;
+    padding: 1% 1% 0% 1%;
+    margin: 0.5% 0.5% 0.5% 0.5%;
+    background-color: rgba(255, 255, 255,0.15);  
+    backdrop-filter: blur(10px);
+}
+@media(max-width:575px){
+    .Coordinators{
+        margin: 1% 1% 1% 1%;
+    }
+    .Coordinator1{
+        width: 150px;
+    }
+    .Coordinators h1{
+        font-size: 21px;
+    }
+    .Coordinators p{
+        font-size: 18px;
+    }
+    .Coordinator2{
+        width: 150px;
+    }
+    /* .Coordinator3{
+        display: none;
+    } */
+    .Wrapper{
+        padding-top: 4%;
+        margin: 1% 1% 1% 1%;
+        width: 350px;
+    }
+    .Identity{
+        padding-top: 5%;
+        width: 65%;
+    }
+    .HODDiv{
+        width: 90%;
+    }
+    .RakeshDiv{
+        width: 90%;
+    }
+    .PrincyDiv{
+        width: 90%;
+    }
+}
+@media screen and (max-width:380px) and (max-width:768px) {  
+    .Coordinator1{width:100%;}
+  .Coordinator2{ width:100%;}
+  .Coordinator3{ width: 100%;}
+  #three img{height:80px;width: 80px;}
+  #two img{height:80px;width: 80px;}
+  #one img{height:80px;width:80px; } 
+  }

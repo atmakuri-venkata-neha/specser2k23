@@ -1,0 +1,474 @@
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'AboutUs.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css.map' %}">
+    <script src="{% static 'JS/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'JS/bootstrap.bundle.min.js.map' %}"></script>
+    <style>
+      body{
+        background-image: url("{% static '5040007.jpg' %}");
+      }
+    </style>
+    <title>SpeCSEr2K23</title>
+</head>
+<body>
+    <div><div class="navBar" >
+      <nav class="navbar navbar-expand-xl sticky-top navbar-dark" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="{% static 'BrandLogo.png' %}" style="height: 40px;width:auto;border-radius: 0px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="{% url 'technical_events' %}">Technical Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="{% url 'non_technical_events' %}">Non-Technical Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="{% url 'ar_vr_workshop' %}">Gamification With AR and VR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="{% url '3d_workshop' %}">3D Printing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="{% url 'sponsors' %}">Our Sponsors</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="{% url 'about_us' %}">About Us</a>
+              </li>
+              {% if request.user.is_authenticated %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{request.user.username}}
+                </a>
+                <ul class="dropdown-menu bg-dark" style="min-width: 1px; width:110px">
+                  <li><a class="dropdown-item text-white" href="{% url 'user' %}">Profile</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'account_logout' %}">LogOut</a></li>
+                </ul>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% provider_login_url 'google' %}">Login</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav> 
+      </div>
+      </div>
+
+            <div class="section"><!-- This is Remaining Body After Navbar -->
+              <div class="About">
+                <div class="Faculty">
+                  <h1 class="display-4 text-white">Specser Committee</h1>
+                  <div class="FlexBox">
+                    <div class="PrincyDiv" >
+                      <img src="{% static 'ViceChancellor.jpg' %}" style="height: 200px;width: 200px; border-radius: 50%; margin-bottom: 2%;" alt="Vice Chancellor"/>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Prof. G. V. R. Prasada Raju</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.5rem;">Hon’ble Vice-Chancellor, JNTUK, Kakinada</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.3rem;">Chief Patron</h1></div>
+                  </div>
+                    <div class="PrincyDiv">
+                      <img src="{% static 'Rector.png' %}" style="height: 200px;width: 200px; border-radius: 50%; margin-bottom: 2%;" alt="Rector"/>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Prof. K V Ramana</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.5rem;">Rector, JNTUK</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.3rem;">Patron</h1></div>
+                  </div>
+                  <div class="PrincyDiv">
+                    <img src="{% static 'Registrar.jpeg' %}" style="height: 200px;width: 200px; border-radius: 50%; margin-bottom: 2%;" alt="Registrar"/>
+                    <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Prof. L. Sumalatha</h1></div>
+                    <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.5rem;">Registrar, JNTUK</h1></div>
+                    <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.3rem;">Patron</h1></div>
+                </div>
+                    <div class="PrincyDiv">
+                      <img src="{% static 'Principal.jpeg' %}" style="height: 200px;width: 200px; border-radius: 50%; margin-bottom: 2%;" alt="Principal"/>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Prof. Ch. Srinivasa Rao</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.5rem;">Principal</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.3rem;">Co-Patron</h1></div>
+                  </div>
+                    <div class="PrincyDiv">
+                      <img src="{% static 'HOD.jpg' %}" style="height: 200px;width: 200px; border-radius: 50%; margin-bottom: 2%;" alt="Head Of The Department"/>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Prof. T. Siva Rama Krishna</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.5rem;margin-left: auto;margin-right: auto;">Head Of The Department</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.3rem;margin-left: auto;margin-right: auto;">Chair Person</h1></div>
+                  </div>
+                    <div class="RakeshDiv">
+                      <img src="https://media.istockphoto.com/id/1218827148/photo/success-for-man-who-reaches-first-place-and-stands-out-from-the-crowd.jpg?b=1&s=170667a&w=0&k=20&c=l0JC2K0UQFggjHZtM5qsLSKjHrEpieSpNdJKGXwbNyQ=" style="height: 200px;width: 200px; border-radius: 50%; margin-bottom: 2%;" alt="Faculty Coordinator"/>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Mr. Ch. Rakesh</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.5rem;">Co-ordinator</h1></div>
+                  </div>
+                  </div>
+                </div>
+                <div class="FestBody">
+                  <h1 class="display-4 text-white">Student Coordinators</h1>
+                  <div class="FlexBox">
+                    <div class="Identity">
+                      <img src="{% static 'Sanjay.jpg' %}" style="height: 200px;width: 200px; border-radius: 50%; margin-bottom: 2%;" alt="President"/>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >R. Sanjay</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.5rem;">President</h1></div>
+                      <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 7032354793</p></div> -->
+                  </div>
+                    <div class="Identity">
+                      <img src="{% static 'Atika.jpg' %}" style="height: 200px;width: 200px; border-radius: 50%; margin-bottom: 2%;" alt="Vice-President"/>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Sk. Atika</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.5rem;">Vice-President</h1></div>
+                      <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 8977795079</p></div> -->
+                  </div>
+                    <div class="Identity">
+                      <img src="{% static 'Lokesh.jpg' %}" style="height: 200px;width: 200px; border-radius: 50%; margin-bottom: 2%;" alt="Secretariat"/>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >N. Lokesh</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.5rem;">Secretariat</h1></div>
+                      <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 8985042381</p></div> -->
+                  </div>
+                    <div class="Identity">
+                      <img src="{% static 'Harshitha.jpg' %}" style="height: 200px;width: 200px; border-radius: 50%; margin-bottom: 2%;" alt="Joint Secretariat"/>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >D. Harshitha</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.5rem;">Joint Secretariat</h1></div>
+                      <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 7989853801</p></div> -->
+                  </div>
+                    <div class="Identity">
+                      <img src="{% static 'Siddhu.jpg' %}" style="height: 200px;width: 200px; border-radius: 50%; margin-bottom: 2%;" alt="Siddhardha"/>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >B.Siddhardha</h1></div>
+                      <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 1.5rem;">Treasurer</h1></div>
+                      <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 8520043271</p></div> -->
+                  </div>
+                  </div>
+                </div>
+                <div class="FestHeads">
+                  <div>
+                    <h1  class="display-4 text-white">Workshop Coordinators</h1>
+                    <div class="FlexBox">
+                      <div class="EventDetails">
+                        <div class="Wrapper">
+                          <h1  class="display-6 text-white" style="padding-left: 10px;">Gamification With AR and VR</h1>
+                            <hr>
+                            <div class="Coordinators" id="three">
+                              <div class="Coordinator1">
+                                <img src="{% static 'vijay.jpg' %}">
+                                <div style="width:100%;display: flex;justify-content: center;"><h1  class="display-6 text-white" >M. Vijay</h1></div>
+                              </div>
+                              <div class="Coordinator2">
+                                <img src="{% static 'Neelima.jpeg' %}">
+                                <div style="width:100%;display: flex;justify-content: center;"><h1  class="display-6 text-white" >G. Neelima</h1></div>
+                              </div>
+                              <div class="Coordinator3">
+                                <img src="{% static 'kumarswamy.jpeg' %}">
+                                <div style="width:100%;display: flex;justify-content: center;"><h1  class="display-6 text-white" >R. Kumar Swamy</h1></div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h1 class="display-4 text-white">Technical Event Coordinators</h1>
+                    <div class="FlexBox">
+                      <div class="EventDetails">
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Blind Code</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'Deepika.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Ch. Deepika</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 9347391946</p></div> -->
+                            </div>
+                            <div class="Coordinator2">
+                              <img src="{% static 'Sushma Harika.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >P. Sushma</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 8328076921</p></div> -->
+                            </div>
+                            <div class="Coordinator3">
+                              <img src="{% static 'yamuna.doc.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Yamuna</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 8328076921</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                       
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Debugging</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'IMG_20230301_123927.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >P. Jaya Lakshmi</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 76709 40241</p></div> -->
+                            </div>
+                            <div class="Coordinator2">
+                              <img src="{% static '1674799016028.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >S. Sai Teja</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 79897 88505</p></div> -->
+                            </div>
+                            <div class="Coordinator3">
+                              <img src="{% static 'WhatsApp Image 2023-03-03 at 16.07.03.jpeg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Sk. Sabira</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 99631 07851</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Cypher Chase</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'WhatsApp Image 2023-03-01 at 10.21.01.jpeg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white">P. Joni</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 91770 81360</p></div> -->
+                            </div>
+                            <div class="Coordinator2">
+                              <img src="{% static 'WhatsApp Image 2023-03-02 at 09.28.30.jpeg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" style="font-size: 2rem;">R. Vishnu Sumanjani</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 7793975898</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Enigma</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'Gayathri.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >B. Gayathri</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 87122 80849</p></div> -->
+                            </div>
+                            <div class="Coordinator2">
+                              <img src="{% static 'WhatsApp Image 2023-03-17 at 12.08.04.jpeg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >D.V.S.Gowtham</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 94404 50121</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Gear Up Your Thoughts</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'WhatsApp Image 2023-03-01 at 15.51.54.jpeg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >A. Neha</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 74168 57955</p></div> -->
+                            </div>
+                            <div class="Coordinator2">
+                              <img src="{% static 'IMG20220406132301.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >D. Sai Ram</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 63003 06965</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Knowledge Quest</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'WhatsApp Image 2023-03-01 at 17.23.47.jpeg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Ch.Lakshman</h1></div>
+                              <div style="width:100%;display: flex;justify-content: center;"><p class="lead">President</p></div>
+                            </div>
+                            <div class="Coordinator2">
+                              <img src="{% static 'IMG-20221125-WA0009.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >R. Sravani</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 86392 40322</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Ode To Code</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'image.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >K.Susmitha</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 70323 13179</p></div> -->
+                            </div>
+                            <div class="Coordinator2">
+                              <img src="{% static 'IMG-20230110-WA0002.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >G. Ramya</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 70759 56200</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Technion</h1>
+                          <hr>
+                        <div class="Coordinators">
+                          <div class="Coordinator1">
+                            <img src="{% static 'IMG20230301133755.jpg' %}">
+                            <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >G. Sudheer</h1></div>
+                            <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 93473 91946</p></div> -->
+                          </div>
+                          <div class="Coordinator2">
+                            <img src="{% static 'IMG-20221126-WA0004 - Copy_2.jpg' %}">
+                            <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >R. Sathvika</h1></div>
+                            <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 83280 76921</p></div> -->
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h1 class="display-4 text-white">Non-Technical Event Coordinators</h1>
+                    <div class="FlexBox">
+                      <div class="EventDetails">
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Treasure Hunt</h1>
+                          <hr>
+                        <div class="Coordinators">
+                          <div class="Coordinator1">
+                            <img src="{% static '1677754857672-02.jpeg' %}">
+                            <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Stephen</h1></div>
+                            <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 6305883294</p></div> -->
+                          </div>
+                          <div class="Coordinator2">
+                            <img src="{% static '1677605578822.jpg' %}">
+                            <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >Priyanka</h1></div>
+                            <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 8179533090</p></div> -->
+                          </div>
+                        </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Just Imagine</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'Sowmya.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >M. Sowmya</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 9618868808</p></div> -->
+                            </div>
+                            <div class="Coordinator2">
+                              <img src="{% static 'IMG-20230301-WA0008_2.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >R. Vivek</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 7780537374</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Filmy Quiz</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'IMG_20220611_200936.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >J. Manikanta</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 9381498272</p></div> -->
+                            </div>
+                            <div class="Coordinator2">
+                              <img src="{% static 'Devi1.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >I. Devi Navya Sri</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 8096696312</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Tug Of War</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'IMG_20230301_211349.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >S. Mohan Vamsi</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 6302866229</p></div> -->
+                            </div>
+                            <div class="Coordinator2">
+                              <img src="{% static 'Snapchat-1889258478.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >N. Bhavani</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 9177367661</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Photo Contest</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'IMG_20230301_211349.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >S. Mohan Vamsi</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 6302866229</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Reel Contest</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'IMG_20221026_234938.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >M. Aditya</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 9392479256</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="Wrapper">
+                          <h1 class="display-6 text-white" style="padding-left: 10px;">Meme Contest</h1>
+                          <hr>
+                          <div class="Coordinators">
+                            <div class="Coordinator1">
+                              <img src="{% static 'Ajay.jpg' %}">
+                              <div style="width:100%;display: flex;justify-content: center;"><h1 class="display-6 text-white" >P. Ajay</h1></div>
+                              <!-- <div style="width:100%;display: flex;justify-content: center;"><p class="lead">+91 9392736678</p></div> -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <footer class="bd-footer py-4 py-md-5 mt-5 bg-dark">
+                <div class="container px-4 px-md-3 text-light">
+                  <div class="row">
+                    <div class="col-lg-3 mb-3">
+                      <a class="d-inline-flex align-items-center mb-2 text-body-secondary text-decoration-none" href="/" aria-label="Bootstrap">
+                        <img src="{% static 'Logo.png' %}" style="height: 40px;">
+                      </a>
+                      <ul class="list-unstyled small">
+                        <li class="mb-2">The Computer Science and Engineering department
+                            of JNTUK UCEN </li>
+                        <li class="mb-2">University College of Engineering JNTUK
+                            Narasaraopet (UCEN)</li>
+                      </ul>
+                    </div>
+                    <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+                      <h5>Links</h5>
+                      <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/">Home</a></li>
+                        <li class="mb-2"><a href="{% url 'technical_events' %}">Technical Events</a></li>
+                        <li class="mb-2"><a href="{% url 'non_technical_events' %}">Non Technical Events</a></li>
+                        <li class="mb-2"><a href="{% url 'ar_vr_workshop' %}">Gamification Workshop</a></li>
+                        <li class="mb-2"><a href="{% url '3d_workshop' %}">3D Printing </a></li>
+                        <li class="mb-2"><a href="{% url 'about_us' %}">About Us</a></li>
+                     
+                      </ul>
+                    </div>
+                    <div class="col-6 col-lg-2 mb-3">
+                      <h5>Contact Us</h5>
+                      <dl class="list-unstyled">
+                        <dt class="mb-2">Phone Number</dt>
+                        <dd>+91 70323 54793</dd>
+                        <dt class="mb-2">Gmail</dt>
+                        <dd>specser.2k23@gmail.com</dd>
+                      </ul>
+                    </div>
+                    <div class="col-6 col-lg-2 mb-3">
+                      <h5>Follow Us</h5>
+                      <ul class="list-unstyled">
+                        <li class="mb-2"><svg style="margin-right: 3%" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                        </svg><a href="https://www.instagram.com/specser_2k23/">Instagram</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "Template.html" %} 
+{% load i18n %} 
+{% load account socialaccount %} 
+
+{%block head_title %}{% trans "Sign In" %}{% endblock %} 
+
+{% block content %}
+<div class="container-fluid col-md-7">
+
+    <br>
+    {% if user.is_authenticated %}
+      <p>Welcome, You are logged in as {{ user.username }}</p>
+    {% else %}
+      <a href="{% provider_login_url 'google' %}">Login With Google</a>
+    {% endif %}
+   
+  </div>
+{% endblock content%}

@@ -1,0 +1,149 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    /* background-image: url('5040007.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.navBar{
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    padding: 0.5% 2% 0.5% 2%;
+    background-color: rgba(255, 255, 255,0.15);  
+    backdrop-filter: blur(10px);
+    z-index: 5555;
+}
+.section{
+    position: relative;
+    top: 72px;
+}
+.EventInformation{
+    padding: 6% 6% 3% 6%;
+    color:white;
+}
+.EventPoster{
+    padding-left: 193.795px;
+    padding-right: 193.759px;
+}
+.EventImage{
+    border-radius: 20px;
+}
+.EventInfo{
+    padding: 3% 15% 3% 15%;
+    word-wrap: break-word;
+}
+.MoreInfo{
+    padding-top: 2%;
+    padding-left: 4%;
+}
+.Register{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+@media (min-width:1280px){
+    img{
+        vertical-align: middle;
+        height: 450px;
+        width: 100%;
+    }
+    .EventImage{
+        border-radius: 20px;
+    }
+    .EventInformation{
+        padding-top: 3%;
+    }
+}
+@media(max-width : 1280px){
+    img{
+        vertical-align: middle;
+        height: 450px;
+        width: 100%;
+    }
+    .EventImage{
+        border-radius: 20px;
+    }
+    .EventInformation{
+        padding-top: 4%;
+    }
+    .EventPoster{
+        padding: 0px;
+    }
+    .Register{
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+    .EventInfo{
+        padding: 3% 0% 0% 0%;
+    }
+}
+@media(max-width : 991px){
+    img{
+        vertical-align: middle;
+        height: 450px;
+        width: 100%;
+    }
+    .EventImage{
+        border-radius: 20px;
+    }
+    .EventPoster{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .Register{
+        padding-left: 68%;
+        padding-right: 0%;
+    }
+    .EventInfo{
+        padding: 3% 0% 0% 0%;
+    }
+}
+@media (max-width:575px){
+    img{
+        vertical-align:middle;
+        height: 250px;
+        width:100%;
+        padding: 0px;
+    }
+    .EventImage{
+        border-radius:20px;
+    }
+    .section{
+        top:61px;
+    }
+    .EventPoster{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .EventInformation{
+        padding-top: 6%;
+    }
+    .Register{
+        padding-left: 20%;
+        padding-right: 0%;
+        padding-top: 4%;
+    }
+    .EventInfo{
+        padding: 3% 0% 0% 0%;
+    }
+}
+.callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    color: #6edff6;
+    background-color: #032830;
+    border-left: 0.25rem solid #055160;
+}
+.callout-info {
+    --bd-callout-color: #6edff6;
+    --bd-callout-bg: #032830;
+    --bd-callout-border: #055160;
+}
