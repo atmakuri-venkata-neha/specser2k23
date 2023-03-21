@@ -183,12 +183,24 @@ def register(request):
         if request.method=='POST':
             event_id = request.POST.get('event')
             event = Events.objects.get(id=event_id)
+            event_name = event.event_name
             amount = int(request.POST.get('amount'))
+            first_name = request.POST.get('first_name')
+            last_name = request.POST.get('last_name')
+            phone = int(request.POST.get('phone'))
+            if 100000000<phone>9999999999:
+                pass
+            tarnsaction_id=request.POST.get('transaction_id')
             regestration = Registrations.objects.create(user = user.id,
                                                     event=event_id,
-                                                    amount=amount) 
+                                                    amount=amount,
+                                                    user_phone=phone,
+                                                    transaction_id=tarnsaction_id,
+                                                    first_name=first_name,
+                                                    last_name=last_name,
+                                                    event_name=event_name) 
             regestration.save()
-            msg = 'you are registered for'
+            msg = 'You are registered for'
             return render(request,'index.html',{'msg':msg,'id' :event.event_name})
     else:
         error = 'Please login before registering'

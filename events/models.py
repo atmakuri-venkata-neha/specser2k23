@@ -49,10 +49,15 @@ class Events(models.Model):
 
 class Registrations(models.Model):
     user = models.IntegerField()
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     event = models.IntegerField()
+    event_name = models.CharField(max_length=50)
     amount = models.IntegerField(null=True, blank=True)
     checksum = models.CharField(max_length=1000, null=True, blank=True)
     payment = models.BooleanField(null=True, blank=True)
+    transaction_id = models.CharField(max_length=200)
+    user_phone = models.BigIntegerField()
 
 
     

@@ -28,11 +28,12 @@
                     <!-- <form action="register" method="post">
                         {% csrf_token %} -->
                     
-                    <form class="row g-3" method="post" action="">
+                    <form class="row g-3" method="post" action="register">
                         {% csrf_token %}
                         <div class="alert alert-primary" role="alert">
                           These details are presented in your certificate!!
                         </div>
+                        
                         <div class="col-md-6">
                           <label for="FisrtName" class="form-label text-white">First Name</label>
                           <input type="text" class="form-control bg-dark text-white" id="FirstName"  value="{{request.user.first_name}}" name="first_name">
@@ -74,7 +75,10 @@
                         <label for="total_amount" class="form-label text-white">Total Amount</label>
                         <input type="number" name="amount" value="{{amount}}" id="total_amount" class="form-select bg-dark text-white" disabled>
                        <center> <img src="{% static 'WhatsApp Image 2023-03-21 at 15.45.16.jpeg' %}" alt="qr scanner" style="height: 200px; width: 200px;"></center>
-                        <label for="transaction_id" class="form-label text-white">Transaction ID</label>
+                       <div class="alert alert-primary" role="alert">
+                        Transaction IDshould be entered for confirmation!!
+                      </div> 
+                       <label for="transaction_id" class="form-label text-white">Transaction ID</label>
                         <input type="text" name="transaction_id"  id="transaction_id" class="form-select bg-dark text-white" required>
                         
                         <div class="Register d-grid gap-2 d-md-flex justify-content-md-end">
