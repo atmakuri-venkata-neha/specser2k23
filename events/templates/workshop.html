@@ -70,10 +70,10 @@
         <div class="section">
           <!-- Below Lies About The Event -->
           <div class="EventInformation">
-            <form action="register" method="post">
-              {% csrf_exempt %}
+            <form action="intiatepayment" method="post">
+              {% csrf_token %}
             <input type="number" hidden name="event" value="{{event.id}}">
-                      <input type="number" hidden name="amount" value="{{event.event_fee}}">
+            <input type="number" hidden name="amount" value="{{event.event_fee}}">
               <div class="EventPoster"><img src="{{event.event_poster.url}}" class="EventImage" alt="EventPoster"></div>
               <div class="EventInfo">
                   <h1 class="display-4">{{event.event_name}}</h1>
@@ -117,13 +117,14 @@
                   <div class="callout callout-info">
                     If you register for workshop you will not be able to register for any other
                   </div>
-                  <div class="alert alert-primary" role="alert">
+                  <!-- <div class="alert alert-primary" role="alert">
                     Registrations Open Soon!!!!
-                  </div>
+                  </div> -->
+                  <div class="Register d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-outline-light me-md-2" style="width: 200px;">Register</button>
+                </div>
               </div>
-              <div class="Register d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button type="button" class="btn btn-outline-light me-md-2" style="width: 200px;">Register</button>
-              </div>
+              
               </form>
           </div>
                     <!-- <input type="number" hidden name="event" value="{{event.id}}">

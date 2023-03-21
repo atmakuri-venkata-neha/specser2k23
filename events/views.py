@@ -71,6 +71,8 @@ def intiatepayment(request):
             event_id = request.POST.get('event')
             event = Events.objects.get(id=event_id)
             amount = int(request.POST.get('amount'))
+            # phone_no = request.POST.get('phone')
+           
             if user.events_registered==0:
                 regestration_amount=100
                 amount=amount+100
@@ -82,6 +84,7 @@ def intiatepayment(request):
                 user.save()
             return render(request,'Paytmform.html',{
             'event': event,
+            # 'event_name':event.event_name,
             'amount':amount,
             'reg_fee':regestration_amount
         })
@@ -185,7 +188,7 @@ def register(request):
                                                     event=event_id,
                                                     amount=amount) 
             regestration.save()
-            msg = 'you are resistered for'
+            msg = 'you are registered for'
             return render(request,'index.html',{'msg':msg,'id' :event.event_name})
     else:
         error = 'Please login before registering'
