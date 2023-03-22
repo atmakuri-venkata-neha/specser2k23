@@ -28,7 +28,7 @@
                     <!-- <form action="register" method="post">
                         {% csrf_token %} -->
                     
-                    <form class="row g-3" method="post" action="register">
+                    <form class="row g-3">
                         {% csrf_token %}
                         <div class="alert alert-primary" role="alert">
                           These details are presented in your certificate!!
@@ -44,7 +44,7 @@
                         </div>
                         <div class="col-12">
                           <label for="EmailID" class="form-label text-white">Email ID</label>
-                          <input type="email" class="form-control bg-dark text-white" id="EmailID" disabled value="{{request.user.email}}">
+                          <input type="email" class="form-control bg-dark text-white" readonly="true" id="EmailID" value="{{request.user.email}}" name ="email">
                         </div>
                         <div class="col-12">
                           <label for="PhoneNumber" class="form-label text-white">Phone Number</label>
@@ -66,26 +66,29 @@
                           <input type="text" class="form-control bg-dark text-white" id="CollegeName"  name="college">
                         </div>
                         <label for="event" class="form-label text-white">Event</label>
-                        <input type="text" name="event" value="{{event.event_name}}" id="event" class="form-select bg-dark text-white" disabled>
+                        <input type="text" name="event" value="{{event.event_name}}" id="event" class="form-select bg-dark text-white"  >
 
                         <label for="amount" class="form-label text-white">Amount</label>
-                        <input type="number" name="amount" value="{{event.event_fee}}" id="amount" class="form-select bg-dark text-white" disabled>
+                        <input type="number" name="amount" value="{{event.event_fee}}" readonly="true" id="amount" class="form-select bg-dark text-white"  >
                         <label for="reg_fee" class="form-label text-white">Registration Fee</label>
-                        <input type="number" name="amount" value="{{reg_fee}}" id="reg_fee" class="form-select bg-dark text-white" disabled>
+                        <input type="number" name="reg_fee" value="{{reg_fee}}" readonly="true" id="reg_fee" class="form-select bg-dark text-white"  >
                         <label for="total_amount" class="form-label text-white">Total Amount</label>
-                        <input type="number" name="amount" value="{{amount}}" id="total_amount" class="form-select bg-dark text-white" disabled>
+                        <input type="number" name="totat_amount" value="{{amount}}" id="total_amount" readonly="true" class="form-select bg-dark text-white"  >
                        <center> <img src="{% static 'WhatsApp Image 2023-03-21 at 15.45.16.jpeg' %}" alt="qr scanner" style="height: 200px; width: 200px;"></center>
                        <div class="alert alert-primary" role="alert">
-                        Transaction IDshould be entered for confirmation!!
+                        Transaction ID should be entered for confirmation!!
                       </div> 
                        <label for="transaction_id" class="form-label text-white">Transaction ID</label>
                         <input type="text" name="transaction_id"  id="transaction_id" class="form-select bg-dark text-white" required>
                         
                         <div class="Register d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button type="submit" class="btn btn-outline-light me-md-2" style="width: 200px;">Register</button>
+                            <input type="submit" id="reg" class="btn btn-outline-light me-md-2" style="width: 200px;" >
                         </div>
+                   <!-- <div class="card bg-dark" style="padding : 4%;display:none">
+                    <center><h3 class="text-white display-6">Registration Is Succesful</h3>
+                    <button class="btn btn-outline-light text-white"><a href="{% url 'home' %}">Ok</a></button></center>
+                </div> -->
                     </div>
-                   
                   </form>
                     </div>
                 </form>
@@ -93,5 +96,25 @@
             </div>
         </div>
     </div>
+    <script>
+        let form= document.querySelector("form");
+        form.addEventListener("submit",(event)=>{
+            event.preventDefault();
+            document.querySelector('#reg').value='Registering...'
+            document.querySelector('#reg').disabled='true'
+            let data = new FormData(form)
+            fetch('https://script.google.com/macros/s/AKfycbzor81EqYEKQMlcbB8Sy13WUc4JbXJ2ybdSqYQGEnDJsEVPrKtbHcSJDtN2iWLyp0VHOg/exec',{
+                method:"post",
+                body : data
+            })
+            .then(res => res.text())
+            .then(data => {
+                document.querySelector('#reg').value = "Register"
+                window.alert('Registeration is Success\nConfirmation mail will be sent to you shortly!!..')
+                window.location="{% url 'home' %}"
+            })
+        })
+    </script>
 </body>
+
 </html>
